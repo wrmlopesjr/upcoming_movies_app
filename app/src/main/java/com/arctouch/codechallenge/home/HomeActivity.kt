@@ -2,29 +2,41 @@ package com.arctouch.codechallenge.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.api.TmdbApi
-import com.arctouch.codechallenge.base.BaseActivity
+import com.arctouch.codechallenge.base.NetworkState
 import com.arctouch.codechallenge.data.Cache
+import com.arctouch.codechallenge.model.Movie
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.home_activity.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeActivity : BaseActivity() {
+class HomeActivity : AppCompatActivity() {
+
+    private val viewModel by viewModel<HomeViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
 
-        api.upcomingMovies(TmdbApi.API_KEY, TmdbApi.DEFAULT_LANGUAGE, 1, TmdbApi.DEFAULT_REGION)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe {
-                    val moviesWithGenres = it.results.map { movie ->
-                        movie.copy(genres = Cache.genres.filter { movie.genreIds?.contains(it.id) == true })
-                    }
-                    recyclerView.adapter = HomeAdapter(moviesWithGenres)
-                    progressBar.visibility = View.GONE
-                }
+        viewModel.movies.observe(this, moviesObserver)
+        viewModel.networkState.observe(this, networkStateObserver)
+
+        viewModel.load()
+    }
+
+    private val moviesObserver = Observer<MutableList<Movie>> { movies ->
+        recyclerView.adapter = HomeAdapter(movies)
+    }
+
+    private val networkStateObserver = Observer<NetworkState> { networkState ->
+        when (networkState) {
+            NetworkState.RUNNING -> progressBar.visibility = View.VISIBLE
+            NetworkState.SUCCESS -> progressBar.visibility = View.GONE
+            else -> progressBar.visibility = View.GONE
+        }
     }
 }
