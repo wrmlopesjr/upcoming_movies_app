@@ -15,7 +15,7 @@ class TmdbRepository(apiService: ApiService) : BaseRepository<TmdbApi>(apiServic
         return schedule(getEndpoint().genres(API_KEY, DEFAULT_LANGUAGE))
     }
 
-    fun upcomingMovies(page: Long = 1): Single<UpcomingMoviesResponse> {
+    fun upcomingMovies(page: Long): Single<UpcomingMoviesResponse> {
         return schedule(getEndpoint().upcomingMovies(API_KEY, DEFAULT_LANGUAGE, page, null))
     }
 

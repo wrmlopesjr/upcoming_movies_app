@@ -1,16 +1,14 @@
 import androidx.lifecycle.MutableLiveData
 import com.arctouch.codechallenge.base.NetworkState
 
-//add all the values from the list to the LiveData
-fun <T> MutableLiveData<ArrayList<T>>.addListValues(values: List<T>) {
-    val value = this.value ?: arrayListOf()
+fun <T> MutableLiveData<MutableList<T>>.addListValues(values: List<T>) {
+    val value = this.value ?: mutableListOf()
     value.addAll(values)
     this.postValue(value)
 }
 
-//clear the LiveData
-fun <T> MutableLiveData<ArrayList<T>>.clear() {
-    this.postValue(null)
+fun <T> MutableLiveData<MutableList<T>>.clear() {
+    this.postValue(mutableListOf())
 }
 
 fun MutableLiveData<NetworkState>.running() {

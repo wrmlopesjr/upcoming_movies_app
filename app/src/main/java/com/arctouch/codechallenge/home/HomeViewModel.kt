@@ -1,6 +1,8 @@
 package com.arctouch.codechallenge.home
 
+import addListValues
 import androidx.lifecycle.MutableLiveData
+import clear
 import com.arctouch.codechallenge.api.TmdbRepository
 import com.arctouch.codechallenge.base.BaseViewModel
 import com.arctouch.codechallenge.base.NetworkState
@@ -18,11 +20,19 @@ class HomeViewModel(private val repository: TmdbRepository) : BaseViewModel() {
     val movies = MutableLiveData<MutableList<Movie>>()
     val networkState = MutableLiveData<NetworkState>()
 
-    fun load() {
+    init{
+        reload()
+    }
 
+    private fun reload() {
+        movies.clear()
+        load()
+    }
+
+    fun load(page: Long = 1) {
         networkState.running()
 
-        val upcomingMoviesSingle = repository.upcomingMovies()
+        val upcomingMoviesSingle = repository.upcomingMovies(page)
 
         if (Cache.genres.isEmpty()) {
             val genresSingle = repository.genres()
@@ -46,7 +56,7 @@ class HomeViewModel(private val repository: TmdbRepository) : BaseViewModel() {
             movie.copy(genres = Cache.genres.filter { movie.genreIds?.contains(it.id) == true })
         }
 
-        movies.postValue(moviesWithGenres.toMutableList())
+        movies.addListValues(moviesWithGenres)
 
         networkState.success()
     }
@@ -54,6 +64,4 @@ class HomeViewModel(private val repository: TmdbRepository) : BaseViewModel() {
     private fun onLoadError() {
         networkState.error()
     }
-
-
 }
