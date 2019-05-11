@@ -36,8 +36,16 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     implementation "com.github.bumptech.glide:glide:$glide_version"
 
+    implementation "androidx.lifecycle:lifecycle-extensions:$androidx_lifecycle_version"
+
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
     testImplementation "junit:junit:$junit_version"
+    testImplementation "org.koin:koin-test:$koin_version"
+
     androidTestImplementation "androidx.test.ext:junit:$androidx_test_ext_version"
     androidTestImplementation "androidx.test:runner:$androidx_test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidx_espresso_version"
+    androidTestImplementation "org.koin:koin-test:$koin_version"
 }
