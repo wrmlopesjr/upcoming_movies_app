@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.util
+package com.arctouch.codechallenge.util.view
 
 import android.graphics.Color
 import android.os.Build

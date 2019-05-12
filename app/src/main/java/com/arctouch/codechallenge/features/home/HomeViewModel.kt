@@ -30,8 +30,8 @@ class HomeViewModel(private val repository: TmdbRepository) : BaseViewModel() {
         load()
     }
 
-    fun load(page: Long = 1) {
-        networkState.running()
+    fun load(page: Long = 1L) {
+        if(page==1L) networkState.running()
 
         val upcomingMoviesSingle = repository.upcomingMovies(page)
 

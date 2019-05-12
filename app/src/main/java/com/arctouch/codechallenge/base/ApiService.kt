@@ -3,6 +3,8 @@ package com.arctouch.codechallenge.base
 import android.os.Build
 import com.arctouch.codechallenge.BASE_URL
 import com.arctouch.codechallenge.BuildConfig
+import com.arctouch.codechallenge.base.tls.CustomX509TrustManager
+import com.arctouch.codechallenge.base.tls.TLSSocketFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -61,37 +63,16 @@ open class ApiService {
     // we need to do this because themoviedb only support TLS 1.2 and it's not enabled by
     // default in android 19  (this should be fixed, right now it's accepting any certificate)
     private fun configureTLS12(builder: OkHttpClient.Builder) {
-        val trustManager = object : X509TrustManager {
-
-            override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
-
-            override fun checkClientTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
-                try {
-                    chain[0].checkValidity()
-                } catch (e: Exception) {
-                    throw CertificateException("Certificate not valid or trusted.")
-                }
-            }
-
-            override fun checkServerTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
-                try {
-                    chain[0].checkValidity()
-                } catch (e: Exception) {
-                    throw CertificateException("Certificate not valid or trusted.")
-                }
-            }
-        }
-
-        builder.sslSocketFactory(TLSSocketFactory(), trustManager)
+        builder.sslSocketFactory(TLSSocketFactory(), CustomX509TrustManager())
     }
 
     @Suppress("UNCHECKED_CAST")
-    operator fun <T> get(endpointClass: Class<T>): T {
-        var endpoint: Any? = services[endpointClass]
-        if (endpoint == null) {
-            endpoint = getRetrofit().create(endpointClass)
-            services[endpointClass] = endpoint
+    operator fun <T> get(apiClass: Class<T>): T {
+        var api: Any? = services[apiClass]
+        if (api == null) {
+            api = getRetrofit().create(apiClass)
+            services[apiClass] = api
         }
-        return endpoint as T
+        return api as T
     }
 }

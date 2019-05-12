@@ -16,15 +16,15 @@ class TmdbRepository(apiService: ApiService) : BaseRepository<TmdbApi>(apiServic
     val region = Locale.getDefault().country
 
     fun genres(): Single<GenreResponse> {
-        return schedule(getEndpoint().genres(API_KEY, locale))
+        return schedule(getApi().genres(API_KEY, locale))
     }
 
     fun upcomingMovies(page: Long): Single<UpcomingMoviesResponse> {
-        return schedule(getEndpoint().upcomingMovies(API_KEY, locale, page, region))
+        return schedule(getApi().upcomingMovies(API_KEY, locale, page, region))
     }
 
     fun movie(id: Long): Single<Movie> {
-        return schedule(getEndpoint().movie(id, API_KEY, locale))
+        return schedule(getApi().movie(id, API_KEY, locale))
     }
 
 }

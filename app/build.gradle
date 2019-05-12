@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply from: 'jacoco-config.gradle'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -18,6 +20,19 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    sourceSets {
+        test {
+            java.srcDirs += ['src/testCommon/java']
+            resources.srcDirs += ['src/testCommon/resources']
+        }
+        androidTest {
+            java.srcDirs += ['src/testCommon/java']
+            resources.srcDirs += ['src/testCommon/resources']
         }
     }
 }
@@ -49,9 +64,15 @@ dependencies {
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.koin:koin-test:$koin_version"
+    testImplementation "androidx.arch.core:core-testing:$androidx_lifecycle_version"
 
     androidTestImplementation "androidx.test.ext:junit:$androidx_test_ext_version"
     androidTestImplementation "androidx.test:runner:$androidx_test_runner_version"
+    androidTestImplementation "androidx.test:rules:$androidx_test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidx_espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$androidx_espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$androidx_espresso_version"
+
     androidTestImplementation "org.koin:koin-test:$koin_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$androidx_lifecycle_version"
 }

@@ -5,14 +5,14 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.lang.reflect.ParameterizedType
 
-open class BaseRepository<E>(private val endpointService: ApiService) {
+open class BaseRepository<E>(private val apiService: ApiService) {
 
-    private fun <E> getEndpoint(endpoint: Class<E>): E {
-        return endpointService[endpoint]
+    private fun <E> getApi(api: Class<E>): E {
+        return apiService[api]
     }
 
-    protected fun getEndpoint(): E {
-        return getEndpoint(endpointClass())
+    protected fun getApi(): E {
+        return getApi(apiClass())
     }
 
     //configure schedulers
@@ -21,7 +21,7 @@ open class BaseRepository<E>(private val endpointService: ApiService) {
     }
 
     @Suppress("UNCHECKED_CAST")
-    private fun endpointClass(): Class<E> {
+    private fun apiClass(): Class<E> {
         val clazz: Class<out BaseRepository<*>> = javaClass
         val types = (clazz.genericSuperclass as ParameterizedType).actualTypeArguments
         return types[0] as Class<E>

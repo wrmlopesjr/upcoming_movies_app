@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.base
+package com.arctouch.codechallenge.base.tls
 
 import java.io.IOException
 import java.net.InetAddress

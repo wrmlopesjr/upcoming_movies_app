@@ -13,10 +13,12 @@ import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.base.NetworkState
 import com.arctouch.codechallenge.base.components.LoadPageScrollListener
 import com.arctouch.codechallenge.features.detail.DetailActivity
+import com.arctouch.codechallenge.features.home.adapter.HomeAdapter
 import com.arctouch.codechallenge.model.Movie
-import com.arctouch.codechallenge.util.HideStatusBarUtils
+import com.arctouch.codechallenge.util.view.HideStatusBarUtils
 import kotlinx.android.synthetic.main.home_activity.*
 import kotlinx.android.synthetic.main.movie_item.view.*
+import kotlinx.android.synthetic.main.progress_bar.*
 import org.koin.android.ext.android.inject
 
 class HomeActivity : AppCompatActivity(), LoadPageScrollListener.LoadPageScrollLoadMoreListener, HomeAdapter.HomeAdapterItemListener {
