@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.features.detail
+package com.arctouch.codechallenge.feature.detail
 
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -19,6 +19,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
+import jp.wasabeef.glide.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.detail_activity.*
 import kotlinx.android.synthetic.main.progress_bar.*
 
@@ -42,6 +43,10 @@ class DetailActivity : AppCompatActivity() {
             titleTextView.text = movie.title
             genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
             releaseDateTextView.text = movie.releaseDate
+
+            if(movie.voteAverage>0){
+                setEvaluationText(movie.voteAverage)
+            }
 
             if(movie.overview.isNullOrBlank()){
                 overviewText.text = getString(R.string.overview_not_available)
@@ -69,12 +74,22 @@ class DetailActivity : AppCompatActivity() {
                     .into(posterImageView)
 
             Glide.with(this)
+                    .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
+                    .apply(RequestOptions().fitCenter().transform(BlurTransformation(25, 3)))
+                    .into(backgroundImageView)
+
+            Glide.with(this)
                     .load(movie.backdropPath?.let { MovieImageUrlBuilder.buildBackdropUrl(it) })
                     .into(backdropImageView)
         }
 
         progressBar.visibility = View.GONE
 
+    }
+
+    private fun setEvaluationText(voteAverage: Float) {
+        evaluationTextView.text = getString(R.string.vote_average, voteAverage.toString())
+        evaluationStar.visibility = View.VISIBLE
     }
 
     override fun onBackPressed() {

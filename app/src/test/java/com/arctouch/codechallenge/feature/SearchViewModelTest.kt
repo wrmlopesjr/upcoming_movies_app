@@ -4,25 +4,34 @@ import com.arctouch.codechallenge.TestConstants
 import com.arctouch.codechallenge.base.*
 import com.arctouch.codechallenge.base.mock.api.ResponseHandler
 import com.arctouch.codechallenge.feature.home.HomeViewModel
+import com.arctouch.codechallenge.feature.search.SearchViewModel
 import com.arctouch.codechallenge.model.Genre
 import com.arctouch.codechallenge.model.MoviesResponse
 import junit.framework.Assert.assertEquals
 import okhttp3.Request
+import org.junit.Before
 import org.junit.Test
 import org.koin.test.get
 
 
-class HomeViewModelTest : BaseTest() {
+class SearchViewModelTest : BaseTest() {
 
     val emptyResponse = MoviesResponse(3, ArrayList(), 2, 38)
 
     val genreAction = Genre(28, "Action")
     val genreComedy = Genre(35, "Comedy")
 
-    @Test
-    fun testGetUpcoming() {
+    private lateinit var viewModel: SearchViewModel
 
-        val viewModel: HomeViewModel = TestSuite.get()
+    @Before
+    fun setupTest(){
+        viewModel = TestSuite.get()
+    }
+
+    @Test
+    fun testSearch() {
+
+        viewModel.search("Test")
 
         val results = viewModel.movies.value!!
 
@@ -43,9 +52,9 @@ class HomeViewModelTest : BaseTest() {
     }
 
     @Test
-    fun testGetUpcomingPagination() {
+    fun testSearchPagination() {
 
-        TestSuite.mock(TestConstants.upcomingURL).body(object : ResponseHandler {
+        TestSuite.mock(TestConstants.searchURL).body(object : ResponseHandler {
             override fun getResponse(request: Request, path: String): String {
                 val page = request.url().queryParameter("page")!!
                 when (page) {
@@ -62,7 +71,7 @@ class HomeViewModelTest : BaseTest() {
             }
         }).apply()
 
-        val viewModel: HomeViewModel = TestSuite.get()
+        viewModel.search("Test")
 
         //first page already loaded, so request the second one
         viewModel.load(2)
@@ -81,33 +90,33 @@ class HomeViewModelTest : BaseTest() {
     }
 
     @Test
-    fun testGetUpcomingGenreRequestError() {
+    fun testSearchGenreRequestError() {
         TestSuite.mock(TestConstants.genresURL).throwConnectionError().apply()
 
-        val viewModel: HomeViewModel = TestSuite.get()
+        viewModel.search("Test")
 
         //validate request error
         assertEquals(NetworkState.ERROR, viewModel.networkState.value)
     }
 
     @Test
-    fun testGetUpcomingRequestError() {
-        TestSuite.mock(TestConstants.upcomingURL).throwConnectionError().apply()
+    fun testSearchRequestError() {
+        TestSuite.mock(TestConstants.searchURL).throwConnectionError().apply()
 
-        val viewModel: HomeViewModel = TestSuite.get()
+        viewModel.search("Test")
 
         //validate request error
         assertEquals(NetworkState.ERROR, viewModel.networkState.value)
     }
 
     @Test
-    fun testGetUpcomingRequestErrorOnSecondPage() {
-        val viewModel: HomeViewModel = TestSuite.get()
+    fun testSearchRequestErrorOnSecondPage() {
+        viewModel.search("Test")
 
         //validate request success
         assertEquals(NetworkState.SUCCESS, viewModel.networkState.value)
 
-        TestSuite.mock(TestConstants.upcomingURL).throwConnectionError().apply()
+        TestSuite.mock(TestConstants.searchURL).throwConnectionError().apply()
 
         viewModel.load(2)
 
@@ -116,10 +125,10 @@ class HomeViewModelTest : BaseTest() {
     }
 
     @Test
-    fun testGetUpcomingEmptyOnFirstPage() {
-        TestSuite.mock(TestConstants.upcomingURL).body(JsonUtils.toJson(emptyResponse)).apply()
+    fun testSearchEmptyOnFirstPage() {
+        TestSuite.mock(TestConstants.searchURL).body(JsonUtils.toJson(emptyResponse)).apply()
 
-        val viewModel: HomeViewModel = TestSuite.get()
+        viewModel.search("Test")
 
         //validate request empty
         assertEquals(NetworkState.EMPTY, viewModel.networkState.value)

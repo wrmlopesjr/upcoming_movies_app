@@ -6,6 +6,15 @@
     android:background="@color/colorPrimaryDark">
 
     <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <ImageView
         android:id="@+id/backdropImageView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/backdrop_size"
@@ -16,14 +25,20 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/backdrop_size"
+        android:layout_height="match_parent"
         android:background="@color/colorPrimary50p" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/detail_separator_size"
         android:layout_alignBottom="@id/backdropImageView"
-        android:background="@drawable/gradient" />
+        android:background="@drawable/gradient_bottom" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_separator_size"
+        android:layout_below="@id/backdropImageView"
+        android:background="@drawable/gradient_top" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,12 +50,12 @@
             android:id="@+id/posterImageView"
             android:layout_width="@dimen/movie_thumb_width"
             android:layout_height="@dimen/movie_thumb_height"
-            android:adjustViewBounds="true"
             android:layout_marginTop="@dimen/default_margin"
             android:layout_marginEnd="@dimen/small_margin"
+            android:adjustViewBounds="true"
             android:importantForAccessibility="no"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_image_placeholder"/>
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_image_placeholder" />
 
         <TextView
             android:id="@+id/titleTextView"
@@ -56,7 +71,7 @@
 
         <TextView
             android:id="@+id/genresTextView"
-            style="@style/DetailSub"
+            style="@style/DetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/titleTextView"
@@ -65,16 +80,55 @@
             android:maxLines="2"
             tools:text="Drama, Romance, Thriller" />
 
-        <TextView
-            android:id="@+id/releaseDateTextView"
-            style="@style/DetailSub"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/genresTextView"
-            android:layout_marginBottom="@dimen/small_margin"
+            android:layout_toEndOf="@id/posterImageView">
+
+            <TextView
+                android:id="@+id/releaseDateLabelTextView"
+                style="@style/DetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/release_date" />
+
+            <TextView
+                android:id="@+id/releaseDateTextView"
+                style="@style/DetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/very_small_margin"
+                tools:text="19/12/1997" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/posterImageView"
+            android:layout_marginBottom="@dimen/rating_margin_bellow"
             android:layout_toEndOf="@id/posterImageView"
-            android:textStyle="italic"
-            tools:text="19/12/1997" />
+            android:gravity="center_vertical|end">
+
+            <TextView
+                android:id="@+id/evaluationTextView"
+                style="@style/DetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="7/10" />
+
+            <ImageView
+                android:id="@+id/evaluationStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:src="@drawable/ic_star"
+                android:contentDescription="@string/rating"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/overviewTitle"
@@ -96,7 +150,8 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/progress_bar"
-        tools:visibility="gone"/>
+    <include
+        layout="@layout/progress_bar"
+        tools:visibility="gone" />
 
 </RelativeLayout>

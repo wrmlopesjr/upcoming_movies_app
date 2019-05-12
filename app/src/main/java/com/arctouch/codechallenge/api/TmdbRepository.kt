@@ -7,7 +7,7 @@ import com.arctouch.codechallenge.base.ApiService
 import com.arctouch.codechallenge.base.BaseRepository
 import com.arctouch.codechallenge.model.GenreResponse
 import com.arctouch.codechallenge.model.Movie
-import com.arctouch.codechallenge.model.UpcomingMoviesResponse
+import com.arctouch.codechallenge.model.MoviesResponse
 import io.reactivex.Single
 import java.util.*
 
@@ -20,12 +20,12 @@ class TmdbRepository(apiService: ApiService) : BaseRepository<TmdbApi>(apiServic
         return schedule(getApi().genres(API_KEY, locale))
     }
 
-    fun upcomingMovies(page: Long): Single<UpcomingMoviesResponse> {
+    fun upcomingMovies(page: Long): Single<MoviesResponse> {
         return schedule(getApi().upcomingMovies(API_KEY, locale, page, region))
     }
 
-    fun movie(id: Long): Single<Movie> {
-        return schedule(getApi().movie(id, API_KEY, locale))
+    fun searchMovies(page: Long, query: String): Single<MoviesResponse> {
+        return schedule(getApi().searchMovies(API_KEY, locale, page, region, query))
     }
 
 }

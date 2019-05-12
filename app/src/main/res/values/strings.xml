@@ -3,4 +3,11 @@
 
     <string name="overview">Overview</string>
     <string name="overview_not_available">Overview not available</string>
+    <string name="search">Search</string>
+    <string name="upcomingMovies">Upcoming Movies</string>
+    <string name="search_movie">Search movie…</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="release_date">Release date:</string>
+    <string name="vote_average" translatable="false">%1$s/10</string>
+    <string name="rating">Rating</string>
 </resources>

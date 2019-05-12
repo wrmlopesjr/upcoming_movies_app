@@ -1,0 +1,355 @@
+{
+  "results": [
+    {
+      "vote_count": 310,
+      "id": 297725,
+      "video": false,
+      "vote_average": 7,
+      "title": "The Man Who Killed Don Quixote",
+      "popularity": 13.338,
+      "poster_path": "/4o4zw2c9sfHvszIb5xpuFagnouR.jpg",
+      "original_language": "en",
+      "original_title": "The Man Who Killed Don Quixote",
+      "genre_ids": [
+        35,
+        14
+      ],
+      "backdrop_path": "/7m0UQtFp3KQxUvKNr2DN9lDPdE.jpg",
+      "adult": false,
+      "overview": "Toby, a cynical advertising director finds himself trapped in the outrageous delusions of an old Spanish shoe-maker who believes himself to be Don Quixote. In the course of their comic and increasingly surreal adventures, Toby is forced to confront the tragic repercussions of a film he made in his idealistic youth.",
+      "release_date": "2018-05-19"
+    },
+    {
+      "vote_count": 3,
+      "id": 448432,
+      "video": false,
+      "vote_average": 6.8,
+      "title": "The Convent",
+      "popularity": 12.325,
+      "poster_path": "/or9QoOcHfsaypC7UiCEIFtls48N.jpg",
+      "original_language": "en",
+      "original_title": "The Convent",
+      "genre_ids": [
+        36,
+        27
+      ],
+      "backdrop_path": "/2ISCm3brBy0LMP7Po8Av75VxZuT.jpg",
+      "adult": false,
+      "overview": "During the 17th century, a young woman is saved from execution and led to a priory to repent her sins but discovers a greater evil lies within.",
+      "release_date": "2019-05-03"
+    },
+    {
+      "vote_count": 147,
+      "id": 475215,
+      "video": false,
+      "vote_average": 7.4,
+      "title": "Mirai",
+      "popularity": 11.597,
+      "poster_path": "/b9XvI4Nehzi0nXyNVD6DtT39P6l.jpg",
+      "original_language": "ja",
+      "original_title": "未来のミライ",
+      "genre_ids": [
+        16,
+        14,
+        12,
+        10751
+      ],
+      "backdrop_path": "/wLal2P43d2v4AziqkB8i1E8FjAU.jpg",
+      "adult": false,
+      "overview": "The movie follows a 4-year old boy who is struggling to cope with the arrival of a little sister in the family until things turn magical. A mysterious garden in the backyard of the boy's home becomes a gateway allowing the child to travel back in time and encounter his mother as a little girl and his great-grandfather as a young man. These fantasy-filled adventures allow the child to change his perspective and help him become the big brother he was meant to be.",
+      "release_date": "2018-07-20"
+    },
+    {
+      "vote_count": 110,
+      "id": 475132,
+      "video": false,
+      "vote_average": 6.8,
+      "title": "A Private War",
+      "popularity": 11.235,
+      "poster_path": "/pAh6uDR9bBznybiJCVYZNJmjg63.jpg",
+      "original_language": "en",
+      "original_title": "A Private War",
+      "genre_ids": [
+        18,
+        10752
+      ],
+      "backdrop_path": "/i7NkhNDFHRYGUtHSKFm1X7EMEa1.jpg",
+      "adult": false,
+      "overview": "One of the most celebrated war correspondents of our time, Marie Colvin is an utterly fearless and rebellious spirit, driven to the frontlines of conflicts across the globe to give voice to the voiceless.",
+      "release_date": "2018-11-16"
+    },
+    {
+      "vote_count": 0,
+      "id": 508791,
+      "video": false,
+      "vote_average": 0,
+      "title": "The Sun is Also a Star",
+      "popularity": 10.703,
+      "poster_path": "/pYfI62qgone3Ai0tzgxtQq7chDE.jpg",
+      "original_language": "en",
+      "original_title": "The Sun is Also a Star",
+      "genre_ids": [
+        10749
+      ],
+      "backdrop_path": "/pgSq51Qm8eSWjW5tgUMosdxTfU3.jpg",
+      "adult": false,
+      "overview": "A teenage girl falls in love with a boy twelve hours before her family is deported to Jamaica.",
+      "release_date": "2019-05-16"
+    },
+    {
+      "vote_count": 108,
+      "id": 489418,
+      "video": false,
+      "vote_average": 7.7,
+      "title": "In Safe Hands",
+      "popularity": 10.582,
+      "poster_path": "/andgp8cnHZPAwx3zPUDaZ0pn6Go.jpg",
+      "original_language": "fr",
+      "original_title": "Pupille",
+      "genre_ids": [
+        18
+      ],
+      "backdrop_path": "/fozq5WDVQQZ8C1K3rrvgB6IM5O9.jpg",
+      "adult": false,
+      "overview": "Théo is given up for adoption by his biological mother on the very day he is born. After this anonymous birth, the mother has two months to change her mind… Or not. The child welfare services and adoption service spring into action… The former have to take care of the baby and support it during this limbo-like time, this period of uncertainty, while the latter must find a woman to become his adoptive mother. She is called Alice, and she has spent the last ten years fighting to have a child.",
+      "release_date": "2018-12-05"
+    },
+    {
+      "vote_count": 8,
+      "id": 505600,
+      "video": false,
+      "vote_average": 0,
+      "title": "Booksmart",
+      "popularity": 10.48,
+      "poster_path": "/Awyg5IdELQV3sBoErhJ9QVcX8TA.jpg",
+      "original_language": "en",
+      "original_title": "Booksmart",
+      "genre_ids": [
+        35,
+        18,
+        10749
+      ],
+      "backdrop_path": "/wcAqndL2MkIjPrCrYeuE794weNE.jpg",
+      "adult": false,
+      "overview": "Two academic teenage superstars realize, on the eve of their high school graduation, that they should have worked less and played more. Determined to never fall short of their peers, the girls set out on a mission to cram four years of fun into one night.",
+      "release_date": "2019-05-24"
+    },
+    {
+      "vote_count": 145,
+      "id": 470878,
+      "video": false,
+      "vote_average": 7.6,
+      "title": "I Can Only Imagine",
+      "popularity": 9.663,
+      "poster_path": "/veZszwMZu8d3WMU6TJX9sV5w1Y4.jpg",
+      "original_language": "en",
+      "original_title": "I Can Only Imagine",
+      "genre_ids": [
+        18,
+        10751,
+        10402
+      ],
+      "backdrop_path": "/9XjNaS2S0RJfjbUPDAzILPprU3r.jpg",
+      "adult": false,
+      "overview": "Growing up in Texas, Bart Millard suffers physical and emotional abuse at the hands of his father. His childhood and relationship with his dad inspires him to write the hit song \"I Can Only Imagine\" as singer of the Christian band MercyMe.",
+      "release_date": "2018-03-08"
+    },
+    {
+      "vote_count": 75,
+      "id": 502422,
+      "video": false,
+      "vote_average": 7,
+      "title": "Thunder Road",
+      "popularity": 9.332,
+      "poster_path": "/ynljTdiGVUCJJ6THSZi22SBoQAR.jpg",
+      "original_language": "en",
+      "original_title": "Thunder Road",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "backdrop_path": "/6cKpUk38U7GziP548cZ1AGs0RPV.jpg",
+      "adult": false,
+      "overview": "A police officer faces a personal meltdown following a divorce and the death of his mother.",
+      "release_date": "2018-09-12"
+    },
+    {
+      "vote_count": 35,
+      "id": 433502,
+      "video": false,
+      "vote_average": 6.1,
+      "title": "The Aftermath",
+      "popularity": 8.513,
+      "poster_path": "/z7cgORuJIJbJmd3oiRmz1kjAarI.jpg",
+      "original_language": "en",
+      "original_title": "The Aftermath",
+      "genre_ids": [
+        18,
+        10749,
+        10752
+      ],
+      "backdrop_path": "/oYttfN5b8ckroS5VoR5X7zENuBa.jpg",
+      "adult": false,
+      "overview": "In the aftermath of World War II, a British colonel and his wife are assigned to live in Hamburg during the post-war reconstruction, but tensions arise with the German widower who lives with them.",
+      "release_date": "2019-03-01"
+    },
+    {
+      "vote_count": 85,
+      "id": 515911,
+      "video": false,
+      "vote_average": 6.3,
+      "title": "Lady J",
+      "popularity": 8.457,
+      "poster_path": "/u0iF4m7q1Qe3UrQwsObz1VtzcUJ.jpg",
+      "original_language": "fr",
+      "original_title": "Mademoiselle de Joncquières",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "backdrop_path": "/5OU2RfXlMDuwPMb8vXvSKWozFz0.jpg",
+      "adult": false,
+      "overview": "When a romance between a widow and a notorious libertine takes an unexpected turn, Mademoiselle de Joncquières becomes instrumental to one lover’s plans for revenge.",
+      "release_date": "2018-09-12"
+    },
+    {
+      "vote_count": 556,
+      "id": 18320,
+      "video": false,
+      "vote_average": 7.2,
+      "title": "The Young Victoria",
+      "popularity": 8.347,
+      "poster_path": "/kNMUKWshK6qVA9fXGBRJaUSRNoz.jpg",
+      "original_language": "en",
+      "original_title": "The Young Victoria",
+      "genre_ids": [
+        18,
+        36,
+        10749
+      ],
+      "backdrop_path": "/zq4sux0ICOv5N6JHIxdz2Aft7VL.jpg",
+      "adult": false,
+      "overview": "As the only legitimate heir of England's King William, teenage Victoria gets caught up in the political machinations of her own family. Victoria's mother wants her to sign a regency order, while her Belgian uncle schemes to arrange a marriage between the future monarch and Prince Albert, the man who will become the love of her life.",
+      "release_date": "2009-03-04"
+    },
+    {
+      "vote_count": 436,
+      "id": 492282,
+      "video": false,
+      "vote_average": 6.5,
+      "title": "Like a Cat on a Highway",
+      "popularity": 7.606,
+      "poster_path": "/7d3ljZjh3bnMps3UuEhGwTr0Ice.jpg",
+      "original_language": "it",
+      "original_title": "Come un gatto in tangenziale",
+      "genre_ids": [
+        10751,
+        35
+      ],
+      "backdrop_path": "/cqKg2sdREt72uScr5uIn38Xjq2H.jpg",
+      "adult": false,
+      "overview": "Giovanni works for a think tank that aims to redevelop the Italian suburbs. His ex-wife Luce cultivates lavender in Provence, convinced she is French. Giovanni and Luce have raised their 13-year-old daughter Agnes according to the principles of social equality.",
+      "release_date": "2017-12-28"
+    },
+    {
+      "vote_count": 0,
+      "id": 502416,
+      "video": false,
+      "vote_average": 0,
+      "title": "Ma",
+      "popularity": 7.472,
+      "poster_path": "/6n7ASmQ1wY2cxTubFFGlcvPpyk7.jpg",
+      "original_language": "en",
+      "original_title": "Ma",
+      "genre_ids": [
+        53,
+        27
+      ],
+      "backdrop_path": "/87YlnKr2lP9BOBzMulHKnjGHl3d.jpg",
+      "adult": false,
+      "overview": "Sue Ann is a loner who keeps to herself in her quiet Ohio town. One day, she is asked by Maggie, a new teenager in town, to buy some booze for her and her friends, and Sue Ann sees the chance to make some unsuspecting, if younger, friends of her own.  She offers the kids the chance to avoid drinking and driving by hanging out in the basement of her home. But there are some house rules: One of the kids has to stay sober. Don’t curse. Never go upstairs. And call her “Ma.”  But as Ma’s hospitality starts to curdle into obsession, what began as a teenage dream turns into a terrorizing nightmare, and Ma’s place goes from the best place in town to the worst place on earth.",
+      "release_date": "2019-05-29"
+    },
+    {
+      "vote_count": 157,
+      "id": 469274,
+      "video": false,
+      "vote_average": 7.1,
+      "title": "City Hunter",
+      "popularity": 7.397,
+      "poster_path": "/I6Ns3vAGgWOhInv1EjD6BaZP2Q.jpg",
+      "original_language": "fr",
+      "original_title": "Nicky Larson et le Parfum de Cupidon",
+      "genre_ids": [
+        12,
+        35
+      ],
+      "backdrop_path": "/pKDVywMKjM7TeU739z7cR9wu9Sf.jpg",
+      "adult": false,
+      "overview": "Nicky Larson is tasked to recover the perfume of Cupid, a perfume that would make anyone who uses it irresistible.",
+      "release_date": "2019-02-06"
+    },
+    {
+      "vote_count": 88,
+      "id": 495673,
+      "video": false,
+      "vote_average": 4.8,
+      "title": "Belleville Cop",
+      "popularity": 7.351,
+      "poster_path": "/sYLgx2Ywd3GAH8LvsWUx5JEMU2q.jpg",
+      "original_language": "fr",
+      "original_title": "Le Flic de Belleville",
+      "genre_ids": [
+        35
+      ],
+      "backdrop_path": "/8iHlvMbtzXzswf0GDglwM7kKyqv.jpg",
+      "adult": false,
+      "overview": "When a childhood friend from Miami gets killed after he comes to warn of encroaching drug gangs, Baaba moves to Miami and teams up with a local officer to bring down the criminals.",
+      "release_date": "2018-10-17"
+    },
+    {
+      "vote_count": 74,
+      "id": 348657,
+      "video": false,
+      "vote_average": 7.6,
+      "title": "Woman at War",
+      "popularity": 7.323,
+      "poster_path": "/9IwRoLxbYF1Vu1KxHt0aLbyeS5u.jpg",
+      "original_language": "is",
+      "original_title": "Kona fer í stríð",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "backdrop_path": "/7XolBNeZsAm4Gehx09Y4cPdvd5q.jpg",
+      "adult": false,
+      "overview": "A middle aged woman declares war on the heavy industry in her town. She resorts to sabotage and is willing to risk everything for nature and these virgin highlands… until a Ukrainian orphan enters her life.",
+      "release_date": "2018-05-22"
+    },
+    {
+      "vote_count": 13,
+      "id": 521296,
+      "video": false,
+      "vote_average": 7.5,
+      "title": "Okko's Inn",
+      "popularity": 7.242,
+      "poster_path": "/6ccX1LqI3Z2k93QUAaLZZhRcaf8.jpg",
+      "original_language": "ja",
+      "original_title": "劇場版 若おかみは小学生!",
+      "genre_ids": [
+        16
+      ],
+      "backdrop_path": "/gkhnCTG6IvmUVTUMfR1XXFh5fae.jpg",
+      "adult": false,
+      "overview": "12-year-old Oriko Seki, who lost her parents in a car accident, ended up living in her grandmother's Onsen Ryokan \"Haru no Ya.\" With the ghost \"Uribou\" cohabitating with her and all the other odds, she ended up training to be a young female innkeeper. At first, she didn't like the training, but gradually felt her admiration for her title and began to train seriously. Thus, the growth of the young warrior Oriko begins.",
+      "release_date": "2018-09-12"
+    }
+  ],
+  "page": 2,
+  "total_results": 164,
+  "dates": {
+    "maximum": "2019-06-02",
+    "minimum": "2019-05-18"
+  },
+  "total_pages": 9
+}

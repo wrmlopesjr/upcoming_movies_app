@@ -10,7 +10,7 @@ import androidx.test.rule.ActivityTestRule
 import com.arctouch.codechallenge.MOVIE
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.base.BaseInstrumentedTest
-import com.arctouch.codechallenge.features.detail.DetailActivity
+import com.arctouch.codechallenge.feature.detail.DetailActivity
 import com.arctouch.codechallenge.model.Genre
 import com.arctouch.codechallenge.model.Movie
 import org.junit.After
@@ -28,7 +28,7 @@ class DetailActivityInstrumentedTest : BaseInstrumentedTest() {
     val overview = "Test overview about this movie"
     val title = "Movie Test"
     val releaseDate = "2019-05-24"
-    val movie = Movie(1, title, overview, genres, listOf(), "/poster", "/backdrop", releaseDate)
+    val movie = Movie(1, title, overview, genres, 2f, listOf(), "/poster", "/backdrop", releaseDate)
 
 
     private fun launchActivity() {
@@ -49,7 +49,7 @@ class DetailActivityInstrumentedTest : BaseInstrumentedTest() {
         onView(withId(R.id.titleTextView)).check(matches(withText(title)))
 
         onView(withId(R.id.genresTextView)).check(matches(isDisplayed()))
-        onView(withId(R.id.genresTextView)).check(matches(withText(genres.joinToString(separator = ", "){ it.name })))
+        onView(withId(R.id.genresTextView)).check(matches(withText(genres.joinToString(separator = ", ") { it.name })))
 
         onView(withId(R.id.releaseDateTextView)).check(matches(isDisplayed()))
         onView(withId(R.id.releaseDateTextView)).check(matches(withText(releaseDate)))

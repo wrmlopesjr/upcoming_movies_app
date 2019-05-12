@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.arctouch.codechallenge.features.home.HomeActivity"
+            android:name="com.arctouch.codechallenge.feature.home.HomeActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".features.detail.DetailActivity"
+        <activity android:name=".feature.detail.DetailActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".feature.search.SearchActivity"
             android:configChanges="orientation|screenSize"/>
 
     </application>

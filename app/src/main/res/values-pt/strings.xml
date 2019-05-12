@@ -4,5 +4,6 @@
 
     <string name="overview">Sinopse</string>
     <string name="overview_not_available">Sinopse não disponível no momento</string>
+    <string name="rating">Rating</string>
 
 </resources>

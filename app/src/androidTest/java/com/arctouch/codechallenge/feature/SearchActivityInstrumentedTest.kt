@@ -3,6 +3,8 @@ package com.arctouch.codechallenge.feature
 import android.content.Intent
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.matcher.IntentMatchers
@@ -14,7 +16,7 @@ import androidx.test.rule.ActivityTestRule
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.base.BaseInstrumentedTest
 import com.arctouch.codechallenge.feature.detail.DetailActivity
-import com.arctouch.codechallenge.feature.home.HomeActivity
+import com.arctouch.codechallenge.feature.search.SearchActivity
 import com.arctouch.codechallenge.model.MoviesResponse
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.After
@@ -23,10 +25,10 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class HomeActivityInstrumentedTest : BaseInstrumentedTest() {
+class SearchActivityInstrumentedTest : BaseInstrumentedTest() {
 
     @get:Rule
-    val activityRule = ActivityTestRule(HomeActivity::class.java, false, false)
+    val activityRule = ActivityTestRule(SearchActivity::class.java, false, false)
 
 
     private fun launchActivity() {
@@ -36,9 +38,12 @@ class HomeActivityInstrumentedTest : BaseInstrumentedTest() {
     }
 
     @Test
-    fun testHome() {
+    fun testSearch() {
 
         launchActivity()
+
+        onView(withId(R.id.searchText)).perform(typeText("Teste"))
+        onView(withId(R.id.executeSearch)).perform(click())
 
         waitLoading()
 

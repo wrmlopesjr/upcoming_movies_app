@@ -4,30 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="4dp"
-    android:layout_marginEnd="16dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="4dp"
+    android:layout_marginBottom="@dimen/very_small_margin"
+    android:layout_marginEnd="@dimen/default_margin"
+    android:layout_marginStart="@dimen/default_margin"
+    android:layout_marginTop="@dimen/very_small_margin"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
-    app:cardCornerRadius="0dp">
+    app:cardCornerRadius="@dimen/default_corner_radius">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/very_small_margin"
+        android:gravity="center_vertical"
+        android:background="@color/colorSecondary">
 
         <ImageView
             android:id="@+id/posterImageView"
-            android:layout_width="@dimen/movie_thumb_width"
-            android:layout_height="@dimen/movie_thumb_height"
+            android:layout_width="@dimen/movie_thumb_small_width"
+            android:layout_height="@dimen/movie_thumb_small_height"
             android:adjustViewBounds="true"
             android:importantForAccessibility="no"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_image_placeholder" />
 
         <TextView
             android:id="@+id/titleTextView"
+            style="@style/DetailTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
@@ -41,6 +45,7 @@
 
         <TextView
             android:id="@+id/genresTextView"
+            style="@style/DetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/titleTextView"
@@ -51,18 +56,29 @@
             android:textSize="14sp"
             tools:text="Drama, Romance, Thriller" />
 
-        <TextView
-            android:id="@+id/releaseDateTextView"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/small_margin"
-            android:layout_marginStart="@dimen/small_margin"
-            android:layout_toEndOf="@id/posterImageView"
-            android:textSize="12sp"
-            android:textStyle="italic"
-            tools:text="19/12/1997" />
+            android:layout_below="@id/genresTextView"
+            android:layout_toEndOf="@id/posterImageView">
 
+            <TextView
+                android:id="@+id/releaseDateLabelTextView"
+                style="@style/DetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:text="@string/release_date" />
+
+            <TextView
+                android:id="@+id/releaseDateTextView"
+                style="@style/DetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/very_small_margin"
+                tools:text="19/12/1997" />
+
+        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

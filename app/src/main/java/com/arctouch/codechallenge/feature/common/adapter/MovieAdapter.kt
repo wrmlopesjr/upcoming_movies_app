@@ -1,4 +1,4 @@
-package com.arctouch.codechallenge.features.home.adapter
+package com.arctouch.codechallenge.feature.common.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.movie_item.view.*
 
-class HomeAdapter(val listener: HomeAdapterItemListener) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class MovieAdapter(val listener: HomeAdapterItemListener) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     var movies = mutableListOf<Movie>()
 

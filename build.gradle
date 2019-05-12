@@ -10,6 +10,7 @@ buildscript {
     ext.rxandroid_version = '2.1.0'
     ext.rxkotlin_version = '2.2.0'
     ext.glide_version = '4.8.0'
+    ext.glide_transformations_version = '4.0.0'
 
     ext.androidx_lifecycle_version = '2.0.0'
     ext.koin_version = '2.0.0-GA'
