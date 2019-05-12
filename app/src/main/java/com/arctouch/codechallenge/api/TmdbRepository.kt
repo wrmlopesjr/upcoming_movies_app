@@ -2,6 +2,7 @@ package com.arctouch.codechallenge.api
 
 import com.arctouch.codechallenge.API_KEY
 import com.arctouch.codechallenge.DEFAULT_LANGUAGE
+import com.arctouch.codechallenge.DEFAULT_REGION
 import com.arctouch.codechallenge.base.ApiService
 import com.arctouch.codechallenge.base.BaseRepository
 import com.arctouch.codechallenge.model.GenreResponse
@@ -12,8 +13,8 @@ import java.util.*
 
 class TmdbRepository(apiService: ApiService) : BaseRepository<TmdbApi>(apiService) {
 
-    val locale = Locale.getDefault().language
-    val region = Locale.getDefault().country
+    val locale = Locale.getDefault().language ?: DEFAULT_LANGUAGE
+    val region = Locale.getDefault().country ?: DEFAULT_REGION
 
     fun genres(): Single<GenreResponse> {
         return schedule(getApi().genres(API_KEY, locale))

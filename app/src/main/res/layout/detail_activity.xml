@@ -15,20 +15,17 @@
         tools:src="@drawable/ic_launcher_background" />
 
     <View
-        android:id="@+id/backdropOverlay"
         android:layout_width="match_parent"
         android:layout_height="@dimen/backdrop_size"
         android:background="@color/colorPrimary50p" />
 
     <View
-        android:id="@+id/detailSeparator"
         android:layout_width="match_parent"
         android:layout_height="@dimen/detail_separator_size"
         android:layout_alignBottom="@id/backdropImageView"
         android:background="@drawable/gradient" />
 
     <RelativeLayout
-        android:id="@+id/top_information"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/header_distance"

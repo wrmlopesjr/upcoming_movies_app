@@ -9,7 +9,7 @@ import java.util.*
 
 class MockedApiService : ApiService() {
 
-    private val JSON_MEDIA_TYPE = MediaType.parse("application/json")
+    private val JsonMediaType = MediaType.parse("application/json")
     private val mockedApis = HashMap<String, ApiMock>()
 
     //we override the get builder method and use an interceptor
@@ -60,7 +60,7 @@ class MockedApiService : ApiService() {
                     .body(error.response().errorBody())
                     .build()
         } ?: builder.code(mock.getCode())
-                .body(ResponseBody.create(JSON_MEDIA_TYPE, mock.getResponse(chain.request())))
+                .body(ResponseBody.create(JsonMediaType, mock.getResponse(chain.request())))
                 .build()
     }
 
@@ -70,7 +70,7 @@ class MockedApiService : ApiService() {
 
         val content = FileUtils.readJson(api.substring(1) + ".json") ?: return apiNotMocked(api)
         return builder.code(200)
-                .body(ResponseBody.create(JSON_MEDIA_TYPE, content))
+                .body(ResponseBody.create(JsonMediaType, content))
                 .build()
     }
 

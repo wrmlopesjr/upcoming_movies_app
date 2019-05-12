@@ -15,7 +15,6 @@
     <dimen name="backdrop_size">250dp</dimen>
 
 
-    <dimen name="background_alpha_value">0.4</dimen>
     <dimen name="default_elevation">20dp</dimen>
 
 </resources>
