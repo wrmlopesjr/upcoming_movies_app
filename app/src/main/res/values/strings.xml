@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Code Challenge</string>
-    <string name="movie_and_genres">%s - %s</string>
+    <string name="movie_and_genres" translatable="false">%s - %s</string>
+
+    <string name="overview">Overview</string>
+    <string name="overview_not_available">Overview not available</string>
 </resources>

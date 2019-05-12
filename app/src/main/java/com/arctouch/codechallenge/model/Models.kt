@@ -1,17 +1,18 @@
 package com.arctouch.codechallenge.model
 
 import com.squareup.moshi.Json
+import java.io.Serializable
 
-data class GenreResponse(val genres: List<Genre>)
+data class GenreResponse(val genres: List<Genre>) : Serializable
 
-data class Genre(val id: Int, val name: String)
+data class Genre(val id: Int, val name: String) : Serializable
 
 data class UpcomingMoviesResponse(
         val page: Int,
         val results: List<Movie>,
         @field:Json(name = "total_pages") val totalPages: Int,
         @field:Json(name = "total_results") val totalResults: Int
-)
+) : Serializable
 
 data class Movie(
     val id: Int,
@@ -22,4 +23,4 @@ data class Movie(
     @field:Json(name = "poster_path") val posterPath: String?,
     @field:Json(name = "backdrop_path") val backdropPath: String?,
     @field:Json(name = "release_date") val releaseDate: String?
-)
+) : Serializable

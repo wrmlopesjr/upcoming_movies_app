@@ -21,7 +21,7 @@ interface TmdbApi {
             @Query("api_key") apiKey: String,
             @Query("language") language: String,
             @Query("page") page: Long,
-            @Query("region") region: String?
+            @Query("region") region: String
     ): Single<UpcomingMoviesResponse>
 
     @GET("movie/{id}")

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Code Challenge</string>
+
+    <string name="overview">Sinopse</string>
+    <string name="overview_not_available">Sinopse não disponível no momento</string>
+
+</resources>

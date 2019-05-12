@@ -8,19 +8,23 @@ import com.arctouch.codechallenge.model.GenreResponse
 import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.model.UpcomingMoviesResponse
 import io.reactivex.Single
+import java.util.*
 
 class TmdbRepository(apiService: ApiService) : BaseRepository<TmdbApi>(apiService) {
 
+    val locale = Locale.getDefault().language
+    val region = Locale.getDefault().country
+
     fun genres(): Single<GenreResponse> {
-        return schedule(getEndpoint().genres(API_KEY, DEFAULT_LANGUAGE))
+        return schedule(getEndpoint().genres(API_KEY, locale))
     }
 
     fun upcomingMovies(page: Long): Single<UpcomingMoviesResponse> {
-        return schedule(getEndpoint().upcomingMovies(API_KEY, DEFAULT_LANGUAGE, page, null))
+        return schedule(getEndpoint().upcomingMovies(API_KEY, locale, page, region))
     }
 
     fun movie(id: Long): Single<Movie> {
-        return schedule(getEndpoint().movie(id, API_KEY, DEFAULT_LANGUAGE))
+        return schedule(getEndpoint().movie(id, API_KEY, locale))
     }
 
 }

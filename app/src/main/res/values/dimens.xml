@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="big_margin">24dp</dimen>
+
+    <dimen name="header_distance">80dp</dimen>
+
+    <dimen name="detail_separator_size">30dp</dimen>
+
+    <dimen name="movie_thumb_width">100dp</dimen>
+    <dimen name="movie_thumb_height">150dp</dimen>
+
+    <dimen name="backdrop_size">250dp</dimen>
+
+
+    <dimen name="background_alpha_value">0.4</dimen>
+    <dimen name="default_elevation">20dp</dimen>
+
+</resources>

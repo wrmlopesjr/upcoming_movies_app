@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/backdropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/backdrop_size"
+        android:adjustViewBounds="true"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <View
+        android:id="@+id/backdropOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/backdrop_size"
+        android:background="@color/colorPrimary50p" />
+
+    <View
+        android:id="@+id/detailSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_separator_size"
+        android:layout_alignBottom="@id/backdropImageView"
+        android:background="@drawable/gradient" />
+
+    <RelativeLayout
+        android:id="@+id/top_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/header_distance"
+        android:padding="@dimen/default_margin">
+
+        <ImageView
+            android:id="@+id/posterImageView"
+            android:layout_width="@dimen/movie_thumb_width"
+            android:layout_height="@dimen/movie_thumb_height"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_image_placeholder"/>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="@style/DetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/posterImageView"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_toEndOf="@id/posterImageView"
+            android:ellipsize="end"
+            android:maxLines="3"
+            tools:text="Titanic" />
+
+        <TextView
+            android:id="@+id/genresTextView"
+            style="@style/DetailSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_toEndOf="@id/posterImageView"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="Drama, Romance, Thriller" />
+
+        <TextView
+            android:id="@+id/releaseDateTextView"
+            style="@style/DetailSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/genresTextView"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:layout_toEndOf="@id/posterImageView"
+            android:textStyle="italic"
+            tools:text="19/12/1997" />
+
+        <TextView
+            android:id="@+id/overviewTitle"
+            style="@style/DetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/posterImageView"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="@string/overview" />
+
+        <TextView
+            android:id="@+id/overview"
+            style="@style/DetailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/overviewTitle"
+            android:layout_marginTop="@dimen/small_margin"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:visibility="gone" />
+
+</RelativeLayout>
