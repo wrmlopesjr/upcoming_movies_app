@@ -38,8 +38,8 @@ class HomeActivity : AppCompatActivity(), LoadPageScrollListener.LoadPageScrollL
         viewModel.movies.observe(this, moviesObserver)
         viewModel.networkState.observe(this, networkStateObserver)
 
-        recyclerView.addOnScrollListener(loadPageScrollListener)
-        recyclerView.adapter = adapter
+        moviesList.addOnScrollListener(loadPageScrollListener)
+        moviesList.adapter = adapter
     }
 
     private val moviesObserver = Observer<MutableList<Movie>> { movies ->

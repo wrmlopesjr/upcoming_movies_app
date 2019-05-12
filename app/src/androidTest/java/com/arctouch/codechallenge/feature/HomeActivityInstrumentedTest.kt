@@ -16,6 +16,7 @@ import com.arctouch.codechallenge.base.BaseInstrumentedTest
 import com.arctouch.codechallenge.features.detail.DetailActivity
 import com.arctouch.codechallenge.features.home.HomeActivity
 import com.arctouch.codechallenge.model.UpcomingMoviesResponse
+import org.hamcrest.CoreMatchers.containsString
 import org.junit.After
 import org.junit.Rule
 import org.junit.Test
@@ -43,8 +44,8 @@ class HomeActivityInstrumentedTest : BaseInstrumentedTest() {
 
         waitLoading()
 
-        onView(withId(R.id.recyclerView)).check(matches(isDisplayed()))
-        onView(ViewMatchers.withChild(ViewMatchers.withText("Pokémon Detective Pikachu"))).check(matches(isDisplayed()))
+        onView(withId(R.id.moviesList)).check(matches(isDisplayed()))
+        onView(ViewMatchers.withChild(ViewMatchers.withText(containsString("Detective Pikachu")))).check(matches(isDisplayed()))
 
         //click on first item
         onView(ViewMatchers.withChild(ViewMatchers.withText("Extremely Wicked, Shockingly Evil and Vile"))).perform(ViewActions.click())

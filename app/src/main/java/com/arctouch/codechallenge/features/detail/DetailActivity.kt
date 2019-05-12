@@ -44,9 +44,9 @@ class DetailActivity : AppCompatActivity() {
             releaseDateTextView.text = movie.releaseDate
 
             if(movie.overview.isNullOrBlank()){
-                overview.text = getString(R.string.overview_not_available)
+                overviewText.text = getString(R.string.overview_not_available)
             } else {
-                overview.text = movie.overview
+                overviewText.text = movie.overview
             }
 
             Glide.with(this)

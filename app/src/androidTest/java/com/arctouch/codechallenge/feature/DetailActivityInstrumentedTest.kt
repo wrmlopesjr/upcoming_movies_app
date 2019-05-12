@@ -39,7 +39,7 @@ class DetailActivityInstrumentedTest : BaseInstrumentedTest() {
     }
 
     @Test
-    fun testHome() {
+    fun testDetail() {
 
         launchActivity()
 
@@ -54,8 +54,8 @@ class DetailActivityInstrumentedTest : BaseInstrumentedTest() {
         onView(withId(R.id.releaseDateTextView)).check(matches(isDisplayed()))
         onView(withId(R.id.releaseDateTextView)).check(matches(withText(releaseDate)))
 
-        onView(withId(R.id.overview)).check(matches(isDisplayed()))
-        onView(withId(R.id.overview)).check(matches(withText(overview)))
+        onView(withId(R.id.overviewText)).check(matches(isDisplayed()))
+        onView(withId(R.id.overviewText)).check(matches(withText(overview)))
 
     }
 
