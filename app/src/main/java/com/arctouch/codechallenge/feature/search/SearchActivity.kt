@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.SEARCH_STRING
 import com.arctouch.codechallenge.feature.common.CommonMovieActivity
+import kotlinx.android.synthetic.main.error_state.*
 import kotlinx.android.synthetic.main.progress_bar.*
 import kotlinx.android.synthetic.main.search_activity.*
 import org.koin.android.ext.android.inject
@@ -41,6 +42,10 @@ class SearchActivity : CommonMovieActivity() {
             viewModel.search(searchText.text.toString())
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(executeSearch.windowToken, 0)
+        }
+
+        error_state_retry.setOnClickListener {
+            viewModel.load()
         }
 
         progressBar.visibility = View.GONE

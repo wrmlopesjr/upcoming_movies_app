@@ -10,4 +10,12 @@
     <string name="release_date">Release date:</string>
     <string name="vote_average" translatable="false">%1$s/10</string>
     <string name="rating">Rating</string>
+
+    <string name="empty_state_title">No Movies found</string>
+    <string name="empty_state_subtitle">Couldn\'t find any Movies</string>
+
+    <string name="error_state_title">Error loading Movies</string>
+    <string name="error_state_subtitle">We had a problem loading the Movies list, please check your internet connection and click the button to retry</string>
+
+    <string name="error_state_retry">Retry</string>
 </resources>

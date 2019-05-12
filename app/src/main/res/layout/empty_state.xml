@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/emptyState"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_below="@id/toolbar"
+    android:padding="@dimen/big_margin"
+    android:visibility="gone"
+    android:gravity="center_vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/empty_state_title"
+            style="@style/DetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/empty_state_title" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/empty_state_subtitle"
+        style="@style/DetailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/empty_state_subtitle" />
+
+</LinearLayout>

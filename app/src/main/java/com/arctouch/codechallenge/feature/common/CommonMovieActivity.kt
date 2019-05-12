@@ -2,7 +2,6 @@ package com.arctouch.codechallenge.feature.common
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +10,14 @@ import androidx.lifecycle.Observer
 import com.arctouch.codechallenge.MOVIE
 import com.arctouch.codechallenge.base.NetworkState
 import com.arctouch.codechallenge.base.components.LoadPageScrollListener
-import com.arctouch.codechallenge.feature.detail.DetailActivity
 import com.arctouch.codechallenge.feature.common.adapter.MovieAdapter
+import com.arctouch.codechallenge.feature.detail.DetailActivity
 import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.util.view.HideStatusBarUtils
-import kotlinx.android.synthetic.main.home_activity.*
+import kotlinx.android.synthetic.main.empty_state.*
+import kotlinx.android.synthetic.main.error_state.*
 import kotlinx.android.synthetic.main.movie_item.view.*
+import kotlinx.android.synthetic.main.movies_list.*
 import kotlinx.android.synthetic.main.progress_bar.*
 
 abstract class CommonMovieActivity : AppCompatActivity(), LoadPageScrollListener.LoadPageScrollLoadMoreListener, MovieAdapter.HomeAdapterItemListener {
@@ -48,12 +49,23 @@ abstract class CommonMovieActivity : AppCompatActivity(), LoadPageScrollListener
         if (networkState == null) return@Observer
         when (networkState) {
             NetworkState.RUNNING -> progressBar.visibility = View.VISIBLE
-            NetworkState.SUCCESS -> progressBar.visibility = View.GONE
+            NetworkState.SUCCESS -> {
+                moviesList.visibility = View.VISIBLE
+                emptyState.visibility = View.GONE
+                errorState.visibility = View.GONE
+                progressBar.visibility = View.GONE
+            }
             NetworkState.EMPTY -> {
+                moviesList.visibility = View.GONE
+                emptyState.visibility = View.VISIBLE
+                errorState.visibility = View.GONE
                 progressBar.visibility = View.GONE
                 Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show()
             }
             NetworkState.ERROR -> {
+                moviesList.visibility = View.GONE
+                emptyState.visibility = View.GONE
+                errorState.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
