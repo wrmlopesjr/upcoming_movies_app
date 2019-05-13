@@ -13,8 +13,7 @@
         android:layout_height="@dimen/toolbarSize"
         android:paddingStart="0dp"
         android:paddingEnd="@dimen/default_margin"
-        app:title="@string/search"
-        android:gravity="center_vertical">
+        app:title="@string/search">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,6 +21,17 @@
             android:layout_gravity="end"
             android:gravity="center_vertical"
             android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/back_button_size"
+                android:layout_height="@dimen/back_button_size"
+                android:layout_marginEnd="@dimen/big_margin"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="?android:attr/homeAsUpIndicator"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/back" />
 
             <ImageView
                 android:id="@+id/searchButton"

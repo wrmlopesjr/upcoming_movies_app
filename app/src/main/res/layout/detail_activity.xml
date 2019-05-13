@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorPrimaryDark">
 
     <ImageView
@@ -25,11 +25,6 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary50p" />
-
-    <View
-        android:layout_width="match_parent"
         android:layout_height="@dimen/detail_separator_size"
         android:layout_alignBottom="@id/backdropImageView"
         android:background="@drawable/gradient_bottom" />
@@ -43,17 +38,29 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/header_distance"
-        android:padding="@dimen/default_margin">
+        android:background="@color/colorPrimary50p"
+        android:paddingTop="@dimen/default_margin">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/back_button_size"
+            android:layout_height="@dimen/back_button_size"
+            android:layout_marginTop="@dimen/back_button_top_margin_detail"
+            android:layout_marginStart="@dimen/default_margin"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="?android:attr/homeAsUpIndicator"
+            android:tint="@color/white"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back" />
 
         <ImageView
             android:id="@+id/posterImageView"
             android:layout_width="@dimen/movie_thumb_width"
             android:layout_height="@dimen/movie_thumb_height"
-            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/header_distance"
             android:layout_marginEnd="@dimen/small_margin"
-            android:adjustViewBounds="true"
-            android:importantForAccessibility="no"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_image_placeholder" />
 
@@ -107,6 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/posterImageView"
+            android:layout_marginEnd="@dimen/default_margin"
             android:layout_marginBottom="@dimen/rating_margin_bellow"
             android:layout_toEndOf="@id/posterImageView"
             android:gravity="center_vertical|end">
@@ -123,30 +131,45 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/small_margin"
-                android:src="@drawable/ic_star"
                 android:contentDescription="@string/rating"
+                android:src="@drawable/ic_star"
                 android:visibility="gone"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
         </LinearLayout>
 
-
-        <TextView
-            android:id="@+id/overviewTitle"
-            style="@style/DetailTitle"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/posterImageView"
-            android:layout_marginTop="@dimen/big_margin"
-            android:text="@string/overview" />
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/default_margin">
 
-        <TextView
-            android:id="@+id/overviewText"
-            style="@style/DetailText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/overviewTitle"
-            android:layout_marginTop="@dimen/small_margin"
-            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/overviewTitle"
+                    style="@style/DetailTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/overview" />
+
+                <TextView
+                    android:id="@+id/overviewText"
+                    style="@style/DetailText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/small_margin"
+                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
 
     </RelativeLayout>
 

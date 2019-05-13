@@ -5,5 +5,15 @@
     <string name="overview">Sinopse</string>
     <string name="overview_not_available">Sinopse não disponível no momento</string>
     <string name="rating">Rating</string>
+    <string name="back">Voltar</string>
+    <string name="empty_state_subtitle">Não foi possível encontrar nenhum filme</string>
+    <string name="empty_state_title">Nenhum filme encontrado</string>
+    <string name="error_state_retry">Tentar novamente</string>
+    <string name="error_state_subtitle">Não conseguimos carregar a lista de filmes, por favor verifique sua conexão com a internet e clique no botão Tentar novamente</string>
+    <string name="error_state_title">Erro ao carregar filmes</string>
+    <string name="release_date">Estréia:</string>
+    <string name="search">Busca</string>
+    <string name="search_movie">Buscar filme…</string>
+    <string name="upcomingMovies">Próximas estréias</string>
 
 </resources>

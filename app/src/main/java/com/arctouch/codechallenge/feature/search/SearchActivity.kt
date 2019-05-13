@@ -50,8 +50,7 @@ class SearchActivity : CommonMovieActivity() {
 
         progressBar.visibility = View.GONE
 
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        backButton.setOnClickListener { onBackPressed() }
     }
 
     private fun setupObservers() {
@@ -69,11 +68,6 @@ class SearchActivity : CommonMovieActivity() {
 
     override fun onLoadMore(currentPage: Long, totalItemCount: Long, recyclerView: RecyclerView) {
         viewModel.load(currentPage)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
     }
 
     override fun onBackPressed() {

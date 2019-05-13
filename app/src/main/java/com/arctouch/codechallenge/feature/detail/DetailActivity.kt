@@ -30,61 +30,68 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_activity)
 
+        setupTransition()
+
+        HideStatusBarUtils.hide(this)
+
+        configureView((intent?.extras?.getSerializable(MOVIE) as Movie))
+    }
+
+    private fun configureView(movie: Movie) {
+        progressBar.visibility = View.GONE
+
+        backButton.setOnClickListener { onBackPressed() }
+
+        titleTextView.text = movie.title
+        genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
+        releaseDateTextView.text = movie.releaseDate
+
+        if(movie.voteAverage>0){
+            setEvaluationText(movie.voteAverage)
+        }
+
+        if(movie.overview.isNullOrBlank()){
+            overviewText.text = getString(R.string.overview_not_available)
+        } else {
+            overviewText.text = movie.overview
+        }
+
+        Glide.with(this)
+                .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
+                .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+                        .placeholder(R.drawable.ic_image_placeholder).fitCenter()
+                        .transform(RoundedCorners(10)))
+                .listener(object : RequestListener<Drawable> {
+                    override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean {
+                        supportStartPostponedEnterTransition()
+                        return false
+                    }
+
+                    override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+                        supportStartPostponedEnterTransition()
+                        return false
+                    }
+
+                })
+                .into(posterImageView)
+
+        Glide.with(this)
+                .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
+                .apply(RequestOptions().fitCenter().transform(BlurTransformation(25, 3)))
+                .into(backgroundImageView)
+
+        Glide.with(this)
+                .load(movie.backdropPath?.let { MovieImageUrlBuilder.buildBackdropUrl(it) })
+                .into(backdropImageView)
+    }
+
+    private fun setupTransition() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             posterImageView.transitionName = "poster"
             posterImageView.elevation = resources.getDimension(R.dimen.default_elevation)
         }
 
-        HideStatusBarUtils.hide(this)
-
         supportPostponeEnterTransition()
-
-        (intent?.extras?.getSerializable(MOVIE) as Movie).let { movie ->
-            titleTextView.text = movie.title
-            genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
-            releaseDateTextView.text = movie.releaseDate
-
-            if(movie.voteAverage>0){
-                setEvaluationText(movie.voteAverage)
-            }
-
-            if(movie.overview.isNullOrBlank()){
-                overviewText.text = getString(R.string.overview_not_available)
-            } else {
-                overviewText.text = movie.overview
-            }
-
-            Glide.with(this)
-                    .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
-                    .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                            .placeholder(R.drawable.ic_image_placeholder).fitCenter()
-                            .transform(RoundedCorners(10)))
-                    .listener(object : RequestListener<Drawable> {
-                        override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean {
-                            supportStartPostponedEnterTransition()
-                            return false
-                        }
-
-                        override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
-                            supportStartPostponedEnterTransition()
-                            return false
-                        }
-
-                    })
-                    .into(posterImageView)
-
-            Glide.with(this)
-                    .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
-                    .apply(RequestOptions().fitCenter().transform(BlurTransformation(25, 3)))
-                    .into(backgroundImageView)
-
-            Glide.with(this)
-                    .load(movie.backdropPath?.let { MovieImageUrlBuilder.buildBackdropUrl(it) })
-                    .into(backdropImageView)
-        }
-
-        progressBar.visibility = View.GONE
-
     }
 
     private fun setEvaluationText(voteAverage: Float) {

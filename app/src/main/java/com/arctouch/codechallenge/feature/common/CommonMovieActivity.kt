@@ -3,7 +3,6 @@ package com.arctouch.codechallenge.feature.common
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.lifecycle.Observer
@@ -60,14 +59,12 @@ abstract class CommonMovieActivity : AppCompatActivity(), LoadPageScrollListener
                 emptyState.visibility = View.VISIBLE
                 errorState.visibility = View.GONE
                 progressBar.visibility = View.GONE
-                Toast.makeText(this, "Empty", Toast.LENGTH_SHORT).show()
             }
             NetworkState.ERROR -> {
                 moviesList.visibility = View.GONE
                 emptyState.visibility = View.GONE
                 errorState.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
         }
     }
