@@ -1,0 +1,36 @@
+package com.arctouch.codechallenge.util
+
+import com.arctouch.codechallenge.API_KEY
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import java.util.*
+
+private val EXPECTED_POSTER_URL = "https://image.tmdb.org/t/p/w154/poster?api_key=$API_KEY"
+private val EXPECTED_BACKDROP_URL = "https://image.tmdb.org/t/p/w780/backdrop?api_key=$API_KEY"
+
+class DateUtilsTest {
+
+    @Test
+    fun testConvertDateFromResponseUS() {
+        Locale.setDefault(Locale.US)
+
+        assertEquals("Jan 2, 2019", DateUtils.convertDateFromResponse("2019-01-02"))
+        assertEquals("May 25, 1987", DateUtils.convertDateFromResponse("1987-05-25"))
+    }
+
+    @Test
+    fun testConvertDateFromResponseBR() {
+        Locale.setDefault(Locale("pt", "BR"))
+
+        assertEquals("02/01/2019", DateUtils.convertDateFromResponse("2019-01-02"))
+        assertEquals("25/05/1987", DateUtils.convertDateFromResponse("1987-05-25"))
+    }
+
+    @Test
+    fun testConvertDateFromResponseError() {
+        assertEquals("", DateUtils.convertDateFromResponse(null))
+        assertEquals("", DateUtils.convertDateFromResponse(""))
+    }
+
+
+}

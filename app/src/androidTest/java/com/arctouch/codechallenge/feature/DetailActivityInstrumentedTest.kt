@@ -13,6 +13,7 @@ import com.arctouch.codechallenge.base.BaseInstrumentedTest
 import com.arctouch.codechallenge.feature.detail.DetailActivity
 import com.arctouch.codechallenge.model.Genre
 import com.arctouch.codechallenge.model.Movie
+import com.arctouch.codechallenge.util.DateUtils
 import org.junit.After
 import org.junit.Rule
 import org.junit.Test
@@ -52,7 +53,7 @@ class DetailActivityInstrumentedTest : BaseInstrumentedTest() {
         onView(withId(R.id.genresTextView)).check(matches(withText(genres.joinToString(separator = ", ") { it.name })))
 
         onView(withId(R.id.releaseDateTextView)).check(matches(isDisplayed()))
-        onView(withId(R.id.releaseDateTextView)).check(matches(withText(releaseDate)))
+        onView(withId(R.id.releaseDateTextView)).check(matches(withText(DateUtils.convertDateFromResponse(releaseDate))))
 
         onView(withId(R.id.overviewText)).check(matches(isDisplayed()))
         onView(withId(R.id.overviewText)).check(matches(withText(overview)))
