@@ -4,9 +4,9 @@ An App that shows Upcoming Movies and has a simple name search made for the ArcT
 
 ## CI
 
-For every push in the master, a job will run in bitrise. For more information: https://app.bitrise.io/app/9e6b8e00f32ae244
+For every push, a job will run in bitrise. For more information: https://app.bitrise.io/app/ed152af89d6ea656
 
-Master: [![Build Status](https://app.bitrise.io/app/ed152af89d6ea656/status.svg?token=ljB2W50XQsDWMqft6vGhyA)](https://app.bitrise.io/app/ed152af89d6ea656)
+[![Build Status](https://app.bitrise.io/app/ed152af89d6ea656/status.svg?token=ljB2W50XQsDWMqft6vGhyA)](https://app.bitrise.io/app/ed152af89d6ea656)
 
 ## Tools and Frameworks used
 
@@ -31,7 +31,7 @@ To run Instrumentation tests:
 
     ./gradlew connectedDebugAndroidTest
     
-All data for Unit and Instrumentation Tests are mocked with static JSON (check [MockedApiService.kt](app/src/testCommon/java/com/arctouch/codechallenge/base/mock/MockedEndpointService.kt) for implementation)
+All data for Unit and Instrumentation Tests are mocked with static JSON (check [MockedApiService.kt](app/src/testCommon/java/com/arctouch/codechallenge/base/mock/MockedApiService.kt) for implementation)
 
 
 ## Next steps
