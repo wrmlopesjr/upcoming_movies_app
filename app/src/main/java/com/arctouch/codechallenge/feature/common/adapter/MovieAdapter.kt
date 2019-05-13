@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.model.Movie
+import com.arctouch.codechallenge.util.DateUtils
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -21,7 +22,7 @@ class MovieAdapter(val listener: HomeAdapterItemListener) : RecyclerView.Adapter
         fun bind(movie: Movie, listener: HomeAdapterItemListener) {
             itemView.titleTextView.text = movie.title
             itemView.genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
-            itemView.releaseDateTextView.text = movie.releaseDate
+            itemView.releaseDateTextView.text = DateUtils.convertDateFromResponse(movie.releaseDate)
 
             Glide.with(itemView)
                     .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })

@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat
 import com.arctouch.codechallenge.MOVIE
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.model.Movie
+import com.arctouch.codechallenge.util.DateUtils
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder
 import com.arctouch.codechallenge.util.view.HideStatusBarUtils
 import com.bumptech.glide.Glide
@@ -44,7 +45,7 @@ class DetailActivity : AppCompatActivity() {
 
         titleTextView.text = movie.title
         genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
-        releaseDateTextView.text = movie.releaseDate
+        releaseDateTextView.text = DateUtils.convertDateFromResponse(movie.releaseDate)
 
         if (movie.voteAverage > 0) {
             setEvaluationText(movie.voteAverage)
