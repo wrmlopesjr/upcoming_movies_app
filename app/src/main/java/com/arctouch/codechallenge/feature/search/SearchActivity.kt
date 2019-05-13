@@ -59,7 +59,7 @@ class SearchActivity : CommonMovieActivity() {
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
-        if(!searchText.text.isNullOrBlank()){
+        if (!searchText.text.isNullOrBlank()) {
             outState?.putString(SEARCH_STRING, searchText.text.toString())
         }
 

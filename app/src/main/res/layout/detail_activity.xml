@@ -45,14 +45,14 @@
             android:id="@+id/backButton"
             android:layout_width="@dimen/back_button_size"
             android:layout_height="@dimen/back_button_size"
-            android:layout_marginTop="@dimen/back_button_top_margin_detail"
             android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/back_button_top_margin_detail"
+            android:background="?selectableItemBackgroundBorderless"
             android:clickable="true"
+            android:contentDescription="@string/back"
             android:focusable="true"
             android:src="?android:attr/homeAsUpIndicator"
-            android:tint="@color/white"
-            android:background="?selectableItemBackgroundBorderless"
-            android:contentDescription="@string/back" />
+            android:tint="@color/white" />
 
         <ImageView
             android:id="@+id/posterImageView"

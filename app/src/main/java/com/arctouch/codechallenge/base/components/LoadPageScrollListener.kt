@@ -14,7 +14,7 @@ class LoadPageScrollListener(private val loadPageScrollLoadMoreListener: LoadPag
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
         val layoutManager = recyclerView.layoutManager
-        if(layoutManager is LinearLayoutManager){
+        if (layoutManager is LinearLayoutManager) {
             val lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition()
 
             val totalItemCount = layoutManager.getItemCount().toLong()
@@ -44,9 +44,9 @@ class LoadPageScrollListener(private val loadPageScrollLoadMoreListener: LoadPag
     interface LoadPageScrollLoadMoreListener {
 
         fun onLoadMore(
-            currentPage: Long,
-            totalItemCount: Long,
-            recyclerView: RecyclerView
+                currentPage: Long,
+                totalItemCount: Long,
+                recyclerView: RecyclerView
         )
 
     }

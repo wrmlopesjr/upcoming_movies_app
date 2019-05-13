@@ -3,7 +3,6 @@ package com.arctouch.codechallenge.feature
 import com.arctouch.codechallenge.TestConstants
 import com.arctouch.codechallenge.base.*
 import com.arctouch.codechallenge.base.mock.api.ResponseHandler
-import com.arctouch.codechallenge.feature.home.HomeViewModel
 import com.arctouch.codechallenge.feature.search.SearchViewModel
 import com.arctouch.codechallenge.model.Genre
 import com.arctouch.codechallenge.model.MoviesResponse
@@ -24,7 +23,7 @@ class SearchViewModelTest : BaseTest() {
     private lateinit var viewModel: SearchViewModel
 
     @Before
-    fun setupTest(){
+    fun setupTest() {
         viewModel = TestSuite.get()
     }
 

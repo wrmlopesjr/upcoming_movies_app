@@ -6,7 +6,6 @@ import com.arctouch.codechallenge.DEFAULT_REGION
 import com.arctouch.codechallenge.base.ApiService
 import com.arctouch.codechallenge.base.BaseRepository
 import com.arctouch.codechallenge.model.GenreResponse
-import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.model.MoviesResponse
 import io.reactivex.Single
 import java.util.*

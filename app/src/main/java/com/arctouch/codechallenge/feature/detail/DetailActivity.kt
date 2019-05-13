@@ -46,11 +46,11 @@ class DetailActivity : AppCompatActivity() {
         genresTextView.text = movie.genres?.joinToString(separator = ", ") { it.name }
         releaseDateTextView.text = movie.releaseDate
 
-        if(movie.voteAverage>0){
+        if (movie.voteAverage > 0) {
             setEvaluationText(movie.voteAverage)
         }
 
-        if(movie.overview.isNullOrBlank()){
+        if (movie.overview.isNullOrBlank()) {
             overviewText.text = getString(R.string.overview_not_available)
         } else {
             overviewText.text = movie.overview

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Code Challenge</string>
+    <string name="app_name">Upcoming Movies App</string>
 
     <string name="overview">Overview</string>
     <string name="overview_not_available">Overview not available</string>

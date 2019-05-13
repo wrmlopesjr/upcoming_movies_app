@@ -50,7 +50,7 @@ abstract class CommonMovieViewModel(private val repository: TmdbRepository) : Ba
             movie.copy(genres = Cache.genres.filter { movie.genreIds?.contains(it.id) == true })
         }
 
-        if(page==1L && moviesWithGenres.isEmpty()){
+        if (page == 1L && moviesWithGenres.isEmpty()) {
             networkState.empty()
             return
         }

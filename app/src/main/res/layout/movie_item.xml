@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/very_small_margin"
-    android:layout_marginEnd="@dimen/default_margin"
     android:layout_marginStart="@dimen/default_margin"
     android:layout_marginTop="@dimen/very_small_margin"
+    android:layout_marginEnd="@dimen/default_margin"
+    android:layout_marginBottom="@dimen/very_small_margin"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
@@ -16,9 +16,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/very_small_margin"
+        android:background="@color/colorSecondary"
         android:gravity="center_vertical"
-        android:background="@color/colorSecondary">
+        android:padding="@dimen/very_small_margin">
 
         <ImageView
             android:id="@+id/posterImageView"

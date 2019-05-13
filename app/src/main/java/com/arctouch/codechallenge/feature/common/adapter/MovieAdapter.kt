@@ -1,9 +1,9 @@
 package com.arctouch.codechallenge.feature.common.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.model.Movie
 import com.arctouch.codechallenge.util.MovieImageUrlBuilder
@@ -24,9 +24,9 @@ class MovieAdapter(val listener: HomeAdapterItemListener) : RecyclerView.Adapter
             itemView.releaseDateTextView.text = movie.releaseDate
 
             Glide.with(itemView)
-                .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
-                .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE).placeholder(R.drawable.ic_image_placeholder))
-                .into(itemView.posterImageView)
+                    .load(movie.posterPath?.let { MovieImageUrlBuilder.buildPosterUrl(it) })
+                    .apply(RequestOptions().diskCacheStrategy(DiskCacheStrategy.RESOURCE).placeholder(R.drawable.ic_image_placeholder))
+                    .into(itemView.posterImageView)
             itemView.setOnClickListener { listener.onClick(movie, itemView) }
         }
     }

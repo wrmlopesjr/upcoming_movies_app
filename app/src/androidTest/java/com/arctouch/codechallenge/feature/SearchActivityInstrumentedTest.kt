@@ -17,7 +17,6 @@ import com.arctouch.codechallenge.R
 import com.arctouch.codechallenge.base.BaseInstrumentedTest
 import com.arctouch.codechallenge.feature.detail.DetailActivity
 import com.arctouch.codechallenge.feature.search.SearchActivity
-import com.arctouch.codechallenge.model.MoviesResponse
 import org.hamcrest.CoreMatchers.containsString
 import org.junit.After
 import org.junit.Rule
